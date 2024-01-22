@@ -1,11 +1,25 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+type Address struct {
+	city    string
+	street  string
+	zipcode string
+}
+
+type Position struct {
+	pName string
+}
 
 type Client struct {
 	name     string
 	age      int
 	isActive bool
+	Address  //Composition
+	position Position
 }
 
 func main() {
