@@ -1,18 +1,11 @@
 package main
 
-import "strconv"
-
 func main() {
 	println("O valor da soma de 2 + 5 =", sum(2, 3))
 	println(sumTuple(2, 3))
 	valor, isCorrect := sumTuple(2, 3)
 	println(valor, isCorrect)
-
-	block := func(value int) string {
-		return "Olá " + strconv.Itoa(value)
-	}
-
-	clo(block)
+	println("total:", sumAll(1, 2, 3, 4, 5))
 }
 
 // func sum(a int, b int) int {
@@ -25,6 +18,10 @@ func sumTuple(a, b int) (int, bool) {
 	return total, total > 50
 }
 
-func clo(block func(int) string) {
-	println(block(32))
+func sumAll(numbers ...int) int {
+	total := 0
+	for _, n := range numbers {
+		total += n
+	}
+	return total
 }
